@@ -1,193 +1,228 @@
 # web1000-final
 
-Questions 
-  
-What are the four steps of mergesort? 
-  
-Mergesort - Divides input array into 'n' single elements subarrays and repeatedly merge subarrays and sort on each merge. 
- 
-The four steps of the mergesort: 
- 
-Divide 
-Sort 
-Combine 
-Return 
- 
-Using JavaScript, generate a random number between 50 and 100. 
-  
-Math.ceil(Math.random() * 50 + 50);  
- 
-Using Javascript, generate a random number between -100 and 100. 
-  
-Math.round(100 + Math.random() * -100) ;  
- 
-Write a coin flip function. It should return the string "heads" half the time and the string "tails" the other half 
-  
-function coinFlip() {  
-     let flip = Math.floor(Math.random() * 2) + 1;  
- if (flip === 1){  
-   console.log("Heads");  
- }  
- else {  
- console.log("Tails");  
- }  
-}  
-coinFlip();  
- 
-Re-state the following expression without using negation: !(10 > x) 
-  
-10 <= x 
- 
-Re-state the following expression without using negation: !(a > 10 && b <= 5) 
-  
-(a <= 10 || b > 5) 
- 
-Re-state the following expression without repeating variable a: (a && x <= 10) || (a && y < 0) 
-  
-a (x <= 10 || y < 0)     
- 
-Re-state the following expression without negations: !( (a > 10) || (b > 10) || (c > 10) || (isAdmin) ) 
-  
-((a <= 10) && (b<= 10) && (c <= 10 && isAdmin)) 
- 
-Write a function which, given a 2-d array of strings, returns the concatenation of all the strings. 
-  
-var arr = [[['banana'],['icecream']],[["good for you"], ['every day']]]; 
- 
-function twodconcat 
-(arr) { 
-var ret = []; 
-for(var i = 0; i < arr.length; i++) { 
-if(Array.isArray(arr[i])) { 
-ret = ret.concat(twodconcat 
-(arr[i])); 
-} else { 
-ret.push(arr[i]); 
-} 
-} 
-return ret; 
-} 
- 
-twodconcat(arr); 
- 
-Twodconcat( 
-[[['banana'],['icecream']],[["good for you"], ['every day']]]); 
- 
-Write a function which, given a 2-d array and another value x, returns true if x is present in the 2-d array, and false otherwise. 
-  
-var arr = []; 
-var x = 0; 
- 
- 
-function containsElement(arr, x){  
-for (var i = 0; i <arr.length; i++){  
-if (arr[i] == x) return true;  
-}  
-return false;  
-}  
- 
- 
-containsElement(arr, x); 
- 
-Write a function which, given an two sorted arrays of sizes m and n, returns a larger sorted array of size m+n. This function must work in O(m+n) time. 
-  
-var arr1 = []; 
-var arr2 = []; 
- 
- 
-function newArr(arr1,arr2){ 
-var m = arr1.length; 
-var n = arr2.length; 
-Array.sort(arr1, arr2); 
-lrgArrSort = arr1 + arr2; 
-lrgArrSize = m + n;  
-return lrgArrSort + lrgArrSize 
-} 
- 
- 
-newArr([1,2,3,4,5],[6,7,8,9,10]); 
- 
- 
-Given the following edge list, draw the graph. Use MS Paint and include the file in your repo. 
-  
-E = [[1,2], [2,3], [4,5], [2,4], [1,5]  ] 
- 
-  
-Given the following adjacency Matrix, determine whether the graph is directed or undirected and draw it. 
-  
-M = [ 
-[0,0,1,0,1], 
-[0,0,0,0,1], 
-[0,1,0,0,0], 
-[0,1,0,0,0], 
-[0,0,0,0,1], 
-] 
-  
-For exercises 9 and 10, if you assume that n is the size of one side of the matrix, what is the time complexity (Big Oh) of the algorithms you wrote? 
-  
-What is the time complexity of the following function? 
- 
-O(n^2) 
-  
-function thugPop(arr){ 
-var ret = []; 
-for (var i === 0; i < arr.length; i++){        
-if (arr[i] % 15 == 0) ret.push('thugPop');     
-else if (arr[i] % 5 == 0) ret.push('thug'); 
-else if (arr[i] %3 == 0 ) ret.push('pop'); 
-else ret.push(arr[i]); 
-} 
-return ret; 
-} 
-What is the time complexity of the following function? 
-  
-O(n) 
- 
-function thugify(schoolList){ 
-return schoolList.map(function(schoolObj){      
-var school = Object.assign({}, schoolObj);     
-school.students.forEach(function(student){        
-if (Math.random() > 0.5){                      
-student.lastName += 'dogg'; 
-} 
-else { 
-student.firstName = "lil' "+ student.firstName; 
-} 
-}); 
-}); 
-} 
-  
-What is the time complexity of the following function? 
-  
-O(n) 
- 
-function countRepeats(strArr){ 
-var repeats = 0; 
-strArr.forEach(function(str, index){          
-var currentRepeats = strArr.filter(function(innerStr, idx){ 
-return (innerStr === str && index != idx)         
-}); 
-if (currentRepeats.length > 0){                   
-repeats++; 
-} 
-}); 
-return repeats; 
-} 
-  
-What are the main operations of a stack? 
- 
-Push & pop 
- 
-A stack is a data structure based on the principle Last In First Out (LIFO). stack is container to hold nodes and has two operations — push and pop. The push operation is to add nodes into the stack and pop operation is to delete nodes from the stack and returns the top most node. 
- 
-What are the main operations of a queue? 
-  
-Queues have two main methods or operations: 
-enqueue() : which Adds a node (value) to the back, returns size 
-dequeue() : which Removes and returns the next node in the queue 
- 
-What is the runtime of bubblesort? How does it work? 
- 
-The bubblesort runtime is of O(n^2) 
-Bubblesort works by comparing every number in the array. If the number is smaller than the previous, its going to swap it until all numbers are in order from left to right (smaller to larger). 
- 
+Final exam 
+  
+Instructions 
+  
+Create a github repository called web1000-final. If you do not name your repository correctly and don't submit it to canvas you will receive a zero. Looking at you, Arnaldo. 
+  
+In your repository, create a file called testAnswers.txt and copy and paste all the questions in there. 
+  
+Answer each question right below the question text. 
+  
+Questions 
+  
+What are the four steps of mergesort? 
+  
+Mergesort - Divides input array into 'n' single elements subarrays and repeatedly merge subarrays and sort on each merge. 
+ 
+The four steps of the mergesort: 
+ 
+Divide 
+Sort 
+Combine 
+Return 
+ 
+Using JavaScript, generate a random number between 50 and 100. 
+  
+Math.ceil(Math.random() * 50 + 50);  
+ 
+Using Javascript, generate a random number between -100 and 100. 
+  
+Math.round(100 + Math.random() * -100) ;  
+ 
+Write a coin flip function. It should return the string "heads" half the time and the string "tails" the other half 
+  
+function coinFlip() {  
+     let flip = Math.floor(Math.random() * 2) + 1;  
+ if (flip === 1){  
+   console.log("Heads");  
+}  
+else {  
+console.log("Tails");  
+}  
+}  
+coinFlip();  
+ 
+Re-state the following expression without using negation: !(10 > x) 
+  
+10 <= x 
+ 
+Re-state the following expression without using negation: !(a > 10 && b <= 5) 
+  
+(a <= 10 || b > 5) 
+ 
+Re-state the following expression without repeating variable a: (a && x <= 10) || (a && y < 0) 
+  
+a (x <= 10 || y < 0)     
+ 
+Re-state the following expression without negations: !( (a > 10) || (b > 10) || (c > 10) || (isAdmin) ) 
+  
+((a <= 10) && (b<= 10) && (c <= 10 && isAdmin)) 
+ 
+Write a function which, given a 2-d array of strings, returns the concatenation of all the strings. 
+  
+var arr = [[['banana'],['ice cream']],[["good for you"], ['every day']]];  
+  
+function twodConcat(arr) {  
+var ret = [];  
+for(var i = 0; i < arr.length; i++) {  
+if(Array.isArray(arr[i])) {  
+ret = ret.concat(twodConcat  
+(arr[i]));  
+} else {  
+ret.push(arr[i]);  
+}  
+}  
+return ret;  
+}  
+ 
+------ 
+Undefined 
+------ 
+twodConcat(arr); 
+  
+(4) ["banana", "ice cream", "good for you", "every day"] 
+ 
+Write a function which, given a 2-d array and another value x, returns true if x is present in the 2-d array, and false otherwise. 
+  
+var arr = [1,3,4,5,6,7,8,9];  
+var x = 0;  
+  
+function containsElement(arr, x){   
+for (var i = 0; i <arr.length; i++){   
+if (arr[i] == x) return true;   
+}   
+return false;   
+}   
+  
+----------  
+Undefined 
+---------- 
+containsElement(arr, 6); 
+ 
+true 
+ 
+Write a function which, given an two sorted arrays of sizes m and n, returns a larger sorted array of size m+n. This function must work in O(m+n) time. 
+  
+var arr1 = [1,2,3,4,5];  
+var arr2 = [6,7,8,9,10];  
+var sortArr = []; 
+function newArr(arr1,arr2){  
+var m = arr1.length;  
+var n = arr2.length;  
+for (var i =0; i <arr.length; i++){  
+    sortArr.sort(arr1, arr2);  
+    lrgArrSort = arr1 + ',' + arr2;  
+    lrgArrSize = m + n;  
+}  
+    return lrgArrSort + ' /Array Length is ' + lrgArrSize  
+}  
+ 
+--------------- 
+Undefined 
+--------------- 
+newArr(arr1,arr2) 
+ 
+"1,2,3,4,5,6,7,8,9,10 /Array Length is 10" 
+ 
+ 
+Given the following edge list, draw the graph. Use MS Paint and include the file in your repo. 
+  
+E = [[1,2], [2,3], [4,5], [2,4], [1,5]  ] 
+ 
+ 
+ 
+
+
+  
+Given the following adjacency Matrix, determine whether the graph is directed or undirected and draw it. 
+  
+M = [ 
+     
+0[0,0,1,0,1], 
+1[0,0,0,0,1], 
+2[0,1,0,0,0], 
+3[0,1,0,0,0], 
+4[0,0,0,0,1], 
+] 
+0--->2 
+0--->4 
+1--->4 
+2--->1 
+3--->1 
+4--->4 
+ 
+   
+
+
+ 
+For exercises 9 and 10, if you assume that n is the size of one side of the matrix, what is the time complexity (Big Oh) of the algorithms you wrote? 
+  
+What is the time complexity of the following function? 
+ 
+O(n^2) 
+  
+function thugPop(arr){ 
+var ret = []; 
+for (var i === 0; i < arr.length; i++){        
+if (arr[i] % 15 == 0) ret.push('thugPop');     
+else if (arr[i] % 5 == 0) ret.push('thug'); 
+else if (arr[i] %3 == 0 ) ret.push('pop'); 
+else ret.push(arr[i]); 
+} 
+return ret; 
+} 
+What is the time complexity of the following function? 
+  
+O(n) 
+ 
+function thugify(schoolList){ 
+return schoolList.map(function(schoolObj){      
+var school = Object.assign({}, schoolObj);     
+school.students.forEach(function(student){        
+if (Math.random() > 0.5){                      
+student.lastName += 'dogg'; 
+} 
+else { 
+student.firstName = "lil' "+ student.firstName; 
+} 
+}); 
+}); 
+} 
+  
+What is the time complexity of the following function? 
+  
+O(n) 
+ 
+function countRepeats(strArr){ 
+var repeats = 0; 
+strArr.forEach(function(str, index){          
+var currentRepeats = strArr.filter(function(innerStr, idx){ 
+return (innerStr === str && index != idx)         
+}); 
+if (currentRepeats.length > 0){                   
+repeats++; 
+} 
+}); 
+return repeats; 
+} 
+  
+What are the main operations of a stack? 
+ 
+Push & pop 
+ 
+A stack is a data structure based on the principle Last In First Out (LIFO). stack is container to hold nodes and has two operations — push and pop. The push operation is to add nodes into the stack and pop operation is to delete nodes from the stack and returns the top most node. 
+ 
+What are the main operations of a queue? 
+  
+Queues have two main methods or operations: 
+enqueue() : which Adds a node (value) to the back, returns size 
+dequeue() : which Removes and returns the next node in the queue 
+ 
+What is the runtime of bubblesort? How does it work? 
+ 
+The bubblesort runtime is of O(n^2) 
+Bubblesort works by comparing every number in the array. If the number is smaller than the previous, its going to swap it until all numbers are in order from left to right (smaller to larger). 
+ 
+ 
