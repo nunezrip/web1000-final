@@ -25,7 +25,7 @@ Return 
  
 3. Using JavaScript, generate a random number between 50 and 100. 
   
-Math.ceil(Math.random() * 50 + 50);  
+Math.ceil(Math.random() * 50 + 50);
  
 4. Using Javascript, generate a random number between -100 and 100. 
   
@@ -35,11 +35,11 @@ Math.round(100 + Math.random() * -100) ;  
   
 function coinFlip() {  
      let flip = Math.floor(Math.random() * 2) + 1;  
- if (flip === 1){  
-   console.log("Heads");  
+  if (flip === 1){  
+      return "Heads";  
 }  
-else {  
-console.log("Tails");  
+  else {  
+      return "Tails";  
 }  
 }  
 coinFlip();  
@@ -91,7 +91,8 @@ var x = 0;  
   
 function containsElement(arr, x){   
 for (var i = 0; i <arr.length; i++){   
-if (arr[i] == x) return true;   
+if (arr[i] == x) 
+return true;   
 }   
 return false;   
 }   
